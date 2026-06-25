@@ -1,2 +1,3 @@
-# Cloud-Gaming-Privacy-Protect
-We protect the privacy of Cloud Gaming Users here!
+# Cloud-Gaming-Privacy-Protect, When Cloud Gaming wont respect your privacy, we will!
+
+## Your "Anticheat" (Privacy invasion scripts) is terrible by the way.
