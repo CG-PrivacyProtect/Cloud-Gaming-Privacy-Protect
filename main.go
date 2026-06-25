@@ -27,7 +27,7 @@ func main() {
 
 	// check 1
 	curTime := time.Now()
-	os.Chtimes(filepath.Clean(gmodFolder+`\sourceengine\hl2_sound_vo_english_000`), curTime, curTime)
+	os.Chtimes(filepath.Clean(gmodFolder+`\sourceengine\hl2_sound_vo_english_000.vpk`), curTime, curTime)
 
 	// check 2
 	os.Remove(filepath.Clean(gmodFolder + `\garrysmod\data\pcasino.jpg`))
