@@ -5,6 +5,7 @@ import (
 	"log"
 	"os"
 	"path/filepath"
+	"time"
 
 	_ "github.com/mattn/go-sqlite3"
 	"golang.org/x/sys/windows/registry"
@@ -22,13 +23,17 @@ func main() {
 		log.Fatalln(err)
 	}
 
-	gmodFolder := filepath.Clean(s + `\steamapps\common\GarrysMod\garrysmod`)
+	gmodFolder := filepath.Clean(s + `\steamapps\common\GarrysMod`)
 
 	// check 1
-	os.Remove(filepath.Clean(gmodFolder + `\data\pcasino.jpg`))
+	curTime := time.Now()
+	os.Chtimes(filepath.Clean(gmodFolder+`\sourceengine\hl2_sound_vo_english_000`), curTime, curTime)
 
 	// check 2
-	sqlDbPath := filepath.Clean(gmodFolder + `\cl.db`)
+	os.Remove(filepath.Clean(gmodFolder + `\garrysmod\data\pcasino.jpg`))
+
+	// check 3
+	sqlDbPath := filepath.Clean(gmodFolder + `\garrysmod\cl.db`)
 	db, err := sql.Open("sqlite3", sqlDbPath)
 	if err != nil {
 		log.Fatalln(err)
